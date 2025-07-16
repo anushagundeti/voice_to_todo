@@ -1,0 +1,24 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+/* Your custom styles go here */
+
+
+@layer components {
+  button {
+    @apply px-4 py-2 font-bold rounded bg-indigo-600 text-white;
+  }
+
+  button:disabled {
+    @apply bg-indigo-300 cursor-not-allowed;
+  }
+
+  h2 {
+    @apply text-xl mb-4 text-center;
+  }
+
+  input[type="file"] {
+    @apply mt-2;
+  }
+}

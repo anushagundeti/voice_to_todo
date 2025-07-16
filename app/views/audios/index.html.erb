@@ -1,0 +1,14 @@
+<div class="max-w-2xl mx-auto p-6 bg-white rounded shadow">
+  <div class="flex items-center justify-between mb-6">
+    <h1 class="text-3xl font-bold">🎧 Audios</h1>
+    <%= link_to "➕ Upload", new_audio_path, class: "bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-700" %>
+  </div>
+
+  <ul class="space-y-2">
+    <% @audios.each do |a| %>
+      <li>
+        <%= link_to "Audio ##{a.id}", audio_path(a), class: "text-blue-600 hover:underline" %>
+      </li>
+    <% end %>
+  </ul>
+</div>

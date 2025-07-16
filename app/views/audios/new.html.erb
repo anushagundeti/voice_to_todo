@@ -1,0 +1,30 @@
+<h2 class="text-2xl font-bold mb-6 text-center">🎙️ Record or Upload</h2>
+
+<div class="flex justify-center gap-4 mb-6">
+  <button type="button" id="record-tab" class="tab-toggle px-4 py-2 rounded bg-indigo-600 text-white hover:bg-indigo-700">
+    🎤 Record
+  </button>
+  <button type="button" id="upload-tab" class="tab-toggle px-4 py-2 rounded bg-yellow-500 text-white hover:bg-yellow-600">
+    📁 Upload
+  </button>
+</div>
+
+<%= form_with model: @audio, id: "audio-form", local: true, multipart: true, class: "space-y-6 max-w-md mx-auto" do |f| %>
+  <div id="record-section" class="hidden text-center space-y-4">
+    <div class="flex justify-center gap-4">
+      <button type="button" id="start-recording" class="px-4 py-2 bg-green-600 text-white rounded hover:bg-green-700">Start</button>
+      <button type="button" id="stop-recording" class="px-4 py-2 bg-red-500 text-white rounded hover:bg-red-600" disabled>Stop</button>
+    </div>
+    <audio id="audio-playback" controls class="mx-auto"></audio>
+    <%= f.file_field :file, id: "audio_file", class: "hidden" %>
+  </div>
+
+  <div id="upload-section" class="hidden text-center space-y-2">
+    <%= f.label :file, "Choose File", class: "block font-medium text-lg" %>
+    <%= f.file_field :file, class: "mx-auto" %>
+  </div>
+
+  <div class="text-center">
+    <%= f.submit "Analyze", class: "bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-700 transition" %>
+  </div>
+<% end %>

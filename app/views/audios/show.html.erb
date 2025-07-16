@@ -1,0 +1,37 @@
+<div class="flex justify-center">
+  <div class="w-full max-w-2xl p-6 bg-white rounded-xl shadow space-y-10 text-center">
+
+    <!-- Transcript Section -->
+    <div>
+      <h2 class="text-2xl font-semibold text-gray-800 flex items-center gap-2 justify-center mb-3">
+        📂 <span>Transcript</span>
+      </h2>
+      <p class="bg-gray-50 p-4 rounded-md text-gray-700 whitespace-pre-line font-mono text-sm text-left">
+        <%= @audio.transcript %>
+      </p>
+    </div>
+
+    <!-- TODOs Section -->
+    <div>
+      <h2 class="text-2xl font-semibold text-gray-800 flex items-center gap-2 justify-center mb-3">
+        ✅ <span>TODOs</span>
+      </h2>
+      <ul class="text-left list-disc list-inside space-y-2 text-gray-800 text-base">
+        <% @audio.todos.each do |todo| %>
+          <li><%= todo.content %></li>
+        <% end %>
+      </ul>
+    </div>
+
+    <!-- Back Button -->
+    <!-- Back Button -->
+    <!-- Back Button -->
+    <div class="pt-8 flex justify-center">
+      <%= link_to "← Back to All Audios", audios_path,
+        class: "bg-indigo-600 hover:bg-indigo-700 text-white font-medium px-6 py-2 rounded-lg shadow transition" %>
+    </div>
+
+
+
+  </div>
+</div>
