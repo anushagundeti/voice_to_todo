@@ -1,24 +1,50 @@
-# README
+# 🎙️ Voice TODO AI App
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+A Ruby on Rails application that lets users **record or upload audio**, transcribe it using **Whisper**, and extract actionable TODOs using **OpenRouter AI**.
 
-Things you may want to cover:
+---
 
-* Ruby version
+## ✨ Features
 
-* System dependencies
+- 🎤 **Record audio** via microphone (MediaRecorder API)
+- 📁 **Upload audio files** (MP3, WebM, etc.)
+- 🧠 **Transcribe** audio to text using local Whisper
+- 🤖 **Extract TODOs** using OpenRouter LLM API
+- ✅ Store and view TODOs per user
+- 💡 Built with minimal JavaScript using Importmaps
 
-* Configuration
+---
 
-* Database creation
+## 🔧 Tech Stack
 
-* Database initialization
+| Layer        | Tech Used                     |
+| ------------ | ----------------------------- |
+| Backend      | Ruby on Rails                 |
+| Frontend     | Tailwind CSS, Hotwire         |
+| Audio        | MediaRecorder API             |
+| Transcription| OpenAI Whisper CLI (local)    |
+| AI API       | OpenRouter (chat-based API)   |
+| Database     | PostgreSQL or SQLite (dev)    |
+| Storage      | ActiveStorage (audio blobs)   |
+| Secrets      | dotenv-rails                  |
 
-* How to run the test suite
+---
 
-* Services (job queues, cache servers, search engines, etc.)
+## 📦 Installation
 
-* Deployment instructions
+```bash
+# Clone repo
+git clone https://github.com/your-username/voice_to_todo_ai.git
+cd voice_to_todo_ai
 
-* ...
+# Install dependencies
+bundle install
+
+# Setup DB
+rails db:create db:migrate
+
+# Add Tailwind (if not already)
+rails tailwindcss:install
+
+# Start the app
+bin/dev
